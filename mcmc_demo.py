@@ -60,7 +60,7 @@ def mcmc(iterations):
     
     #36,37,34
     G = 6.67408e-11;
-    drho = 300;#Hess, Parmentier 1995
+    drho = 400;#Hess, Parmentier 1995
  
     y = np.array((-ys/2,ys/2)); 
 
@@ -185,10 +185,10 @@ def mcmc(iterations):
     #MCMC algorithm
     
     for step in np.arange(total):
-        if step%1000 == 0 and step//1000>0:
-            elapsed_time = time.time() - start_time
-            print(str(step) + ' interations, it has been ' + str(elapsed_time//3600)
-                   + ' hr')
+        # if step%1000 == 0 and step//1000>0:
+        #     elapsed_time = time.time() - start_time
+        #     print(str(step) + ' interations, it has been ' + str(elapsed_time//3600)
+        #            + ' hr')
         # llho, summ1 = likelihood(td, xs, far_bg, mtseff0)
         llho, summ1 = likelihood(td, bd, xs, ys, gravv)
         
